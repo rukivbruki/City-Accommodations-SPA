@@ -32,7 +32,7 @@
     "jest": "24.9.0",
     "react-test-renderer": "16.10.2",
     "webpack": "4.41.1",
-    "webpack-cli": "3.3.9"
+    "webpack-cli": "3.3.12"
   },
   "engines": {
     "node": "14",
