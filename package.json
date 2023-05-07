@@ -9,7 +9,7 @@
     "jest": "jest",
     "jest:update": "jest -u",
     "build": "webpack --mode production",
-    "start": "node server.js"
+    "start": "webpack-dev-server"
   },
   "jest": {
     "snapshotSerializers": [

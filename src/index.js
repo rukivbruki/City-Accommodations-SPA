@@ -17,25 +17,15 @@ const history = createBrowserHistory();
 
 const init = () => {
   const api = createAPI(() => history.push(PageAddress.LOGIN));
-  const store = createStore(
-      reducer,
-      compose(
-          applyMiddleware(thunk.withExtraArgument(api)),
-          window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : (f) => f
-      )
-  );
-
+  const store = createStore(reducer, compose(applyMiddleware(thunk.withExtraArgument(api)), window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : (f) => f));
 
   store.dispatch(Operation.loadOffers());
 
-  ReactDOM.render(
-      <Router history={history}>
-        <Provider store={store}>
-          <App/>
-        </Provider>
-      </Router>,
-      rootElement
-  );
+  ReactDOM.render(<Router history={history}>
+    <Provider store={store}>
+      <App/>
+    </Provider>
+  </Router>, rootElement);
 };
 
 init();
